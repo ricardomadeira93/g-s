@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dragon Gás Z | Gás, água, gelo e carvão no Boqueirão, Curitiba</title>
+<meta name="description" content="Gás P13 e P45, água 20 L, gelo, carvão e bebidas na Rua Cleto da Silva, 1610, Boqueirão, Curitiba. Peça pelo WhatsApp ou retire na portaria.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F2691B'/%3E%3Ctext x='16' y='24' font-family='Arial,sans-serif' font-weight='800' font-size='22' text-anchor='middle' fill='%23111111'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#F2691B">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Dragon Gás Z",
+  "legalName": "Pazittos Ltda",
+  "taxID": "31.620.208/0001-37",
+  "foundingDate": "2018-04-09",
+  "telephone": ["+55 41 3276-4949", "+55 41 99289-7697"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Cleto da Silva, 1610",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "postalCode": "81670-450",
+    "addressCountry": "BR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -25.4907056, "longitude": -49.2501402 },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Gás de cozinha P13" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Gás P45" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Água mineral 20 L" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Gelo" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carvão" } }
+  ]
+}
+</script>
+<style>
+  /* Rodada 8, direção B "o muro" (Ricardo, 18/11/2026: "we need soul",
+     escolheu B). Muro de disk-gás: parede laranja chapada, letra preta
+     condensada em caixa alta, número enorme. O amarelo vem da placa da
+     loja e só marca o que foi escolhido.
+     Tipo: Hanken Grotesk em tudo (a família do site da Forma), Archivo
+     itálica só no letreiro da marca. Cantos: 4px. Só tema claro. */
+  :root {
+    color-scheme: light;
+    --muro: #F2691B;
+    --muro-claro: #F58A4A;
+    --amarelo: #FFB703;
+    --tinta: #111111;
+    --tinta-2: #4E4A47;
+    --branco: #FFFFFF;
+    --cinza: #F3F0EE;
+    --erro: #B3261E;
+    --fio: #E2DEDB;
+    --amarelo-leve: #FFF1C7;
+    --vermelho: #D62718;   /* bolinhas da placa */
+    --contorno: #6F6964;   /* contorno de controle, 5,3:1 no branco */
+
+    --logo: "Archivo", sans-serif;          /* só o letreiro da marca */
+    --texto: "Hanken Grotesk", sans-serif;  /* a família do site da Forma (Ricardo, 18/11/2026: opção 1) */
+
+    /* escala: 16 18 22 28 36 44, mais o letreiro */
+    --t-16: 1rem;
+    --t-18: 1.125rem;
+    --t-22: 1.375rem;
+    --t-28: 1.75rem;
+    --t-36: 2.25rem;
+    --t-44: 2.75rem;
+    --t-h2: clamp(2rem, 5vw, 2.75rem);
+    --t-h1: clamp(2.75rem, 12vw, 5.5rem);
+    --t-numero: clamp(3.5rem, 16.5vw, 7rem);
+
+    --e-4: 4px; --e-8: 8px; --e-12: 12px; --e-16: 16px; --e-24: 24px;
+    --e-32: 32px; --e-48: 48px; --e-72: 72px;
+    --raio: 4px;
+    --alvo: 48px;
+    --traco: 2px solid var(--tinta);
+    --borda: 1.5px solid var(--contorno);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body { background: var(--branco); color: var(--tinta); font-family: var(--texto); font-size: var(--t-18); line-height: 1.55; padding-bottom: 88px; }
+  @media (min-width: 960px) { body { padding-bottom: 0; } }
+  a { color: inherit; }
+  button, input, select, textarea { font: inherit; }
+  :focus-visible { outline: 3px solid var(--tinta); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+  .col { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 var(--e-16); }
+  @media (min-width: 760px) { .col { padding: 0 var(--e-32); } }
+
+  /* Letreiro: condensada, preta, caixa alta, sem aperto */
+  h1, h2, .parede .numero { font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; }
+  legend, .resumo h3 { font-weight: 700; letter-spacing: 0; line-height: 1.3; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 var(--e-24); border: 0; border-radius: var(--raio); font-weight: 600; font-size: var(--t-18); text-decoration: none; cursor: pointer; transition: background-color 120ms ease; }
+  .btn-preto { background: var(--tinta); color: var(--branco); }
+  .btn-preto:hover { background: #333; }
+  .btn-muro { background: var(--muro); color: var(--tinta); }
+  .btn-muro:hover { background: var(--muro-claro); }
+  .btn-texto { background: none; border: 0; color: var(--tinta-2); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; min-height: 44px; font-size: var(--t-16); }
+
+  .aviso { background: var(--tinta); color: #EDE8E4; font-size: var(--t-16); padding: 8px 0; }
+  .aviso p { line-height: 1.45; }
+
+  /* O muro */
+  .muro { background: var(--muro); }
+  .cab { background: var(--muro); }
+  .cab .col { display: flex; align-items: center; justify-content: space-between; gap: var(--e-16); min-height: 64px; }
+  .marca { font-family: var(--logo); font-weight: 900; font-style: italic; font-size: var(--t-22); text-transform: uppercase; text-decoration: none; white-space: nowrap; line-height: 1.3; }
+  .marca span { color: var(--amarelo); -webkit-text-stroke: 0.07em var(--tinta); paint-order: stroke fill; font-size: 1.3em; }
+  .cab .zap { font-weight: 600; text-underline-offset: 4px; min-height: var(--alvo); display: inline-flex; align-items: center; white-space: nowrap; }
+  .cab .zap:hover { text-decoration-thickness: 3px; }
+  .zap-num { margin-left: 0.3em; }
+  @media (max-width: 379px) { .zap-num { display: none; } }
+  .cab .direita { display: none; }
+  @media (min-width: 900px) {
+    .cab { position: sticky; top: 0; z-index: 20; border-bottom: var(--traco); }
+    .cab .col { min-height: 72px; }
+    .cab .direita { display: flex; align-items: center; gap: var(--e-32); }
+    .nav { display: flex; gap: var(--e-24); font-weight: 600; }
+    .nav a { text-decoration: none; display: inline-flex; align-items: center; min-height: var(--alvo); }
+    .nav a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+    .cab .zap { display: none; }
+    section[id] { scroll-margin-top: 88px; }
+    .resumo { top: 96px !important; }
+  }
+
+  .parede { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--e-24); padding-top: var(--e-16); padding-bottom: var(--e-32); }
+  .parede h1 { font-size: var(--t-h1); }
+  .parede .liga { display: block; font-weight: 600; font-size: var(--t-22); margin-top: var(--e-8); }
+  .parede .numero { display: block; font-size: var(--t-numero); white-space: nowrap; text-decoration: none; }
+  .parede .numero:hover { text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.12em; }
+  .parede .texto p { font-size: var(--t-22); line-height: 1.45; max-width: 30ch; }
+  .parede .acoes { display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-12) var(--e-24); margin-top: var(--e-24); }
+  .estado { font-weight: 600; font-size: var(--t-16); }
+  @media (min-width: 900px) {
+    .parede { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); column-gap: var(--e-48); align-items: end; padding-top: var(--e-32); padding-bottom: var(--e-48); }
+    .parede .texto { padding-bottom: var(--e-16); }
+  }
+  .fachada { display: block; width: 100%; height: 220px; object-fit: cover; object-position: 70% 60%; border-top: 6px solid var(--tinta); background: var(--cinza); }
+  @media (min-width: 900px) { .fachada { height: 360px; object-position: 70% 55%; } }
+
+  /* Pedido */
+  .pedido { padding: var(--e-48) 0 var(--e-72); }
+  .pedido h2 { font-size: var(--t-h2); }
+  .pedido .intro { color: var(--tinta-2); margin-top: var(--e-4); max-width: 50ch; }
+  .pedido-grade { display: grid; gap: var(--e-48); margin-top: var(--e-32); }
+  @media (min-width: 960px) {
+    .pedido-grade { grid-template-columns: minmax(0, 1fr) 380px; align-items: start; }
+    .resumo { position: sticky; top: var(--e-24); }
+  }
+  fieldset { border: 0; min-width: 0; }
+  .bloco + .bloco { margin-top: var(--e-48); }
+  legend { float: left; width: 100%; font-size: 1.5rem; margin-bottom: var(--e-12); }
+  legend + * { clear: both; }
+
+  /* Lista como a da placa: bolinha vermelha, nome em texto normal, fio entre linhas */
+  .itens { border-top: var(--traco); }
+  .produto { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "info passo" "troca troca"; gap: var(--e-4) var(--e-16); align-items: center; padding: var(--e-16) var(--e-12); border-bottom: 1px solid var(--fio); transition: background-color 120ms ease; }
+  .produto.tem { background: var(--amarelo-leve); }
+  .prod-info { grid-area: info; min-width: 0; }
+  .prod-nome { display: flex; align-items: center; gap: var(--e-8); font-weight: 700; font-size: var(--t-22); line-height: 1.3; }
+  .prod-nome::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--vermelho); flex: none; }
+  .prod-det, .prod-preco { display: block; color: var(--tinta-2); font-size: var(--t-16); line-height: 1.45; padding-left: 18px; }
+  .prod-preco b { color: var(--tinta); font-size: var(--t-18); }
+  .passo { grid-area: passo; display: grid; grid-template-columns: 44px 44px 44px; height: 44px; border: var(--borda); border-radius: var(--raio); overflow: hidden; background: var(--branco); }
+  .passo button { border: 0; background: var(--branco); color: var(--tinta); font-size: var(--t-22); line-height: 1.3; cursor: pointer; }
+  .passo button:hover { background: var(--cinza); }
+  .passo button[data-d="1"] { background: var(--muro); }
+  .passo button[data-d="1"]:hover { background: var(--muro-claro); }
+  .passo button:disabled { color: #B5ADA7; cursor: default; background: var(--branco); }
+  .passo output { display: grid; place-items: center; font-variant-numeric: tabular-nums; font-weight: 600; font-size: var(--t-18); border-left: 1px solid var(--fio); border-right: 1px solid var(--fio); }
+  .produto .troca { grid-area: troca; display: none; padding-left: 18px; }
+  .produto.tem .troca { display: flex; }
+
+  .marcar { display: flex; gap: var(--e-8); align-items: flex-start; min-height: 40px; padding-top: var(--e-4); cursor: pointer; font-size: var(--t-16); line-height: 1.4; }
+  .marcar input { width: 22px; height: 22px; accent-color: var(--tinta); flex: none; }
+
+  .segmentos { display: inline-flex; flex-wrap: wrap; border: var(--borda); border-radius: var(--raio); overflow: hidden; }
+  .segmento { position: relative; flex: 1 1 auto; }
+  .segmento + .segmento { border-left: var(--borda); }
+  .segmento input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .segmento span { display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 var(--e-24); font-weight: 600; white-space: nowrap; background: var(--branco); }
+  .segmento input:hover + span { background: var(--cinza); }
+  .segmento input:checked + span { background: var(--tinta); color: var(--branco); }
+  .segmento input:focus-visible + span { outline: 3px solid var(--muro); outline-offset: -5px; }
+  @media (max-width: 479px) {
+    .segmentos { display: flex; flex-direction: column; }
+    .segmento + .segmento { border-left: 0; border-top: var(--borda); }
+    .segmento span { justify-content: flex-start; padding: 0 var(--e-16); }
+  }
+
+  .campo { display: grid; gap: var(--e-4); margin-top: var(--e-16); }
+  .campo label { font-weight: 600; }
+  .campo .dica { color: var(--tinta-2); font-size: var(--t-16); }
+  .campo input, .campo select, .campo textarea { color: var(--tinta); background: var(--branco); border: var(--borda); border-radius: var(--raio); min-height: 52px; padding: var(--e-8) var(--e-12); width: 100%; }
+  .campo input:focus, .campo select:focus, .campo textarea:focus { box-shadow: 0 0 0 3px var(--muro); outline: none; }
+  .campo textarea { min-height: 88px; resize: vertical; }
+  .campo [aria-invalid="true"] { border-color: var(--erro); box-shadow: inset 0 0 0 1px var(--erro); }
+  .linha-2 { display: grid; gap: 0 var(--e-16); }
+  @media (min-width: 560px) { .linha-2 { grid-template-columns: 2fr 1fr; } }
+  .portaria { border: var(--borda); border-radius: var(--raio); padding: var(--e-16); margin-top: var(--e-16); }
+
+  /* A mensagem */
+  .resumo { background: var(--tinta); color: #F2EDEA; border-radius: var(--raio); padding: var(--e-24) var(--e-16); }
+  @media (min-width: 560px) { .resumo { padding: var(--e-24); } }
+  .resumo h3 { font-size: 1.5rem; }
+  .resumo .para { color: #CFC7C1; font-size: var(--t-16); margin-top: var(--e-4); }
+  .msg { margin-top: var(--e-16); border: 1px solid #4A4542; border-radius: var(--raio); padding: var(--e-16); font-size: var(--t-16); line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; min-height: 120px; }
+  .msg .vazio { color: #CFC7C1; }
+  .enviar { display: flex; width: 100%; min-height: 56px; margin-top: var(--e-16); }
+  .erros { margin-top: var(--e-12); color: #FFB4A9; font-weight: 600; }
+  .erros ul { margin-top: var(--e-4); padding-left: 1.2em; }
+  .depois { color: #CFC7C1; font-size: var(--t-16); margin-top: var(--e-12); }
+  .depois a { color: #F2EDEA; }
+  .so-computador { display: none; }
+  @media (hover: hover) and (pointer: fine) { .so-computador { display: block; } }
+
+  .denovo { border-radius: var(--raio); background: var(--amarelo-leve); padding: var(--e-16); margin-top: var(--e-24); display: flex; flex-wrap: wrap; gap: var(--e-12) var(--e-24); align-items: center; justify-content: space-between; }
+  .denovo p strong { display: block; font-size: var(--t-18); line-height: 1.4; }
+  .denovo .acoes { display: flex; flex-wrap: wrap; gap: var(--e-8) var(--e-16); align-items: center; }
+  .denovo .btn-texto { color: var(--tinta); }
+
+  /* Avaliações */
+  .fama { background: var(--tinta); color: #F2EDEA; padding: var(--e-48) 0 var(--e-72); }
+  .fama h2 { font-size: var(--t-h2); }
+  .fama .grade-fama { display: grid; gap: var(--e-32); margin-top: var(--e-24); }
+  @media (min-width: 960px) { .fama .grade-fama { grid-template-columns: auto 1fr 1fr; gap: var(--e-48); align-items: start; } }
+  .nota strong { display: block; font-weight: 800; letter-spacing: -0.01em; font-size: 5rem; line-height: 1.3; color: var(--muro); }
+  .nota span { color: #CFC7C1; font-size: var(--t-16); }
+  blockquote p { font-size: var(--t-22); line-height: 1.45; }
+  blockquote footer { color: #CFC7C1; font-size: var(--t-16); margin-top: var(--e-8); }
+
+  /* Onde fica */
+  .onde { padding: var(--e-48) 0; border-bottom: var(--traco); }
+  .onde .grade-onde { display: grid; gap: var(--e-16); align-items: end; }
+  @media (min-width: 760px) { .onde .grade-onde { grid-template-columns: 1fr auto; } }
+  .onde h2 { font-size: var(--t-h2); }
+  .onde p { font-size: var(--t-22); line-height: 1.45; max-width: 32ch; margin-top: var(--e-4); }
+
+  .rodape { padding: var(--e-32) 0 var(--e-48); font-size: var(--t-16); color: var(--tinta-2); }
+  .rodape .col { display: grid; gap: var(--e-16); }
+  @media (min-width: 760px) { .rodape .col { grid-template-columns: 1fr 1fr 1fr; } }
+  .rodape strong { display: block; color: var(--tinta); margin-bottom: 2px; }
+  .rodape a { color: var(--tinta); text-underline-offset: 3px; }
+
+  /* Barra do pedido no celular: aparece com o primeiro item */
+  .barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--tinta); color: var(--branco); padding: var(--e-12) var(--e-16); display: flex; align-items: center; justify-content: space-between; gap: var(--e-12); transform: translateY(110%); visibility: hidden; transition: transform 200ms ease-out, visibility 0s linear 200ms; }
+  .barra.ativa { transform: none; visibility: visible; transition: transform 200ms ease-out; }
+  .barra p { font-size: var(--t-16); line-height: 1.4; min-width: 0; }
+  .barra .btn { flex: none; min-height: var(--alvo); padding: 0 var(--e-16); }
+  @media (min-width: 960px) { .barra { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="aviso">
+  <div class="col">
+    <p>Protótipo feito pela Forma Studio para a Dragon Gás Z. Fotos, preços e horário entram quando a loja confirmar.</p>
+  </div>
+</div>
+
+<header class="cab">
+  <div class="col">
+    <a class="marca" href="#topo">Dragon Gás <span>Z</span></a>
+    <div class="direita">
+      <nav class="nav" aria-label="Seções">
+        <a href="#pedido">Produtos</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#onde">Onde fica</a>
+      </nav>
+      <a class="btn btn-preto" href="#pedido">Fazer pedido</a>
+    </div>
+    <a class="zap" href="https://wa.me/5541992897697" target="_blank" rel="noopener" aria-label="Zap 99289-7697">Zap<span class="zap-num"> 99289-7697</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="muro" id="topo" aria-labelledby="titulo">
+    <div class="col parede">
+      <div>
+        <h1 id="titulo">Acabou o gás?</h1>
+        <span class="gordo liga">Liga</span>
+        <a class="gordo numero" href="tel:+554132764949">3276-4949</a>
+      </div>
+      <div class="texto">
+        <p>Gás, água, gelo, carvão e bebidas. Levamos no Boqueirão e bairros vizinhos, ou você retira na portaria da Cleto da Silva, 1610.</p>
+        <div class="acoes">
+          <a class="btn btn-preto" href="#pedido">Montar meu pedido</a>
+          <span class="estado" id="estado">Horário a confirmar</span>
+        </div>
+      </div>
+    </div>
+    <!-- Provisória: foto do Google Maps (mar/2019). Trocar por fotos da loja antes de publicar. -->
+    <img class="fachada" src="referencias/fachada-maps-2019.png" alt="A loja da Dragon Gás Z na Rua Cleto da Silva, com a placa, os telefones e a picape de entrega na frente" width="1568" height="460">
+  </section>
+
+  <section class="pedido" id="pedido" aria-labelledby="titulo-pedido">
+    <div class="col">
+      <h2 id="titulo-pedido">O que vai ser hoje?</h2>
+      <p class="intro">Escolha os itens. O pedido sai pronto para o Zap da loja, com endereço e pagamento, e o atendente só confirma o valor e a hora. Pix, dinheiro ou cartão.</p>
+
+      <div class="denovo" id="denovo" hidden>
+        <p>Seu último pedido neste celular<strong id="denovo-texto"></strong></p>
+        <div class="acoes">
+          <button type="button" class="btn btn-preto" id="repetir">Repetir este pedido</button>
+          <button type="button" class="btn-texto" id="esquecer">Apagar dados deste celular</button>
+        </div>
+      </div>
+
+      <div class="pedido-grade">
+        <form id="form" novalidate>
+          <fieldset class="bloco">
+            <legend>Produtos</legend>
+            <div class="itens" id="itens"></div>
+            <div class="campo">
+              <label for="outros">Bebidas ou outro item</label>
+              <span class="dica" id="outros-dica">Escreva do jeito que você pediria no balcão.</span>
+              <textarea id="outros" aria-describedby="outros-dica" placeholder="Ex.: 2 refrigerantes de 2 litros"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="bloco">
+            <legend>Entrega ou retirada</legend>
+            <div class="segmentos">
+              <label class="segmento"><input type="radio" name="modo" value="entrega" checked><span>Entregar em casa</span></label>
+              <label class="segmento"><input type="radio" name="modo" value="retirada"><span>Retirar na portaria</span></label>
+            </div>
+            <div id="bloco-entrega">
+              <div class="linha-2">
+                <div class="campo">
+                  <label for="rua">Rua e número</label>
+                  <input id="rua" autocomplete="address-line1">
+                </div>
+                <div class="campo">
+                  <label for="bairro">Bairro</label>
+                  <input id="bairro" autocomplete="address-level3">
+                </div>
+              </div>
+              <div class="campo">
+                <label for="ref">Complemento ou ponto de referência</label>
+                <input id="ref" autocomplete="address-line2" placeholder="Ex.: casa dos fundos">
+              </div>
+            </div>
+            <p class="portaria" id="bloco-retirada" hidden>Retire seu gás na portaria da Rua Cleto da Silva, 1610. Mande o pedido antes para já estar separado.</p>
+          </fieldset>
+
+          <fieldset class="bloco">
+            <legend>Pagamento</legend>
+            <div class="segmentos">
+              <label class="segmento"><input type="radio" name="pagamento" value="Pix"><span>Pix</span></label>
+              <label class="segmento"><input type="radio" name="pagamento" value="Dinheiro"><span>Dinheiro</span></label>
+              <label class="segmento"><input type="radio" name="pagamento" value="Cartão"><span id="rotulo-cartao">Cartão na entrega</span></label>
+            </div>
+            <div class="campo" id="bloco-troco" hidden>
+              <label for="troco">Troco para quanto?</label>
+              <span class="dica" id="troco-dica">Deixe em branco se não precisar de troco.</span>
+              <input id="troco" inputmode="decimal" aria-describedby="troco-dica">
+            </div>
+          </fieldset>
+
+          <fieldset class="bloco">
+            <legend>Seus dados</legend>
+            <div class="campo" style="margin-top:0">
+              <label for="nome">Seu nome</label>
+              <input id="nome" autocomplete="given-name">
+            </div>
+            <div class="campo">
+              <label for="origem">Como conheceu a Dragon?</label>
+              <span class="dica" id="origem-dica">Opcional.</span>
+              <select id="origem" aria-describedby="origem-dica">
+                <option value="">Prefiro não dizer</option>
+                <option>Já sou cliente</option>
+                <option>Passei na frente da loja</option>
+                <option>Pesquisa no Google</option>
+                <option>Indicação de alguém</option>
+                <option>Facebook</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <label class="marcar"><input type="checkbox" id="lembrar" checked><span>Lembrar endereço e pedido neste celular, para pedir de novo com um toque</span></label>
+          </fieldset>
+        </form>
+
+        <aside class="resumo" id="resumo" aria-labelledby="titulo-resumo">
+          <h3 id="titulo-resumo">Sua mensagem</h3>
+          <p class="para">Vai para o WhatsApp da Dragon, (41) 99289-7697. Dá para mudar antes de enviar.</p>
+          <div class="msg" id="msg" aria-live="polite"></div>
+          <a class="btn btn-muro enviar" id="enviar" href="https://wa.me/5541992897697" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+          <div class="erros" id="erros" role="alert" hidden></div>
+          <p class="depois so-computador">No computador, a mensagem abre no WhatsApp Web ou no aplicativo do WhatsApp.</p>
+          <p class="depois">Prefere ligar? Disk <a href="tel:+554132764949">3276-4949</a>.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="fama" id="avaliacoes" aria-labelledby="titulo-fama">
+    <div class="col">
+      <h2 id="titulo-fama">O que dizem os vizinhos</h2>
+      <div class="grade-fama">
+        <p class="nota"><strong>5,0</strong><span>24 avaliações no Google, em novembro de 2026</span></p>
+        <blockquote>
+          <p>“O melhor atendimento da região com preço justo!”</p>
+          <footer>Fernanda, no Google</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Atendimento de qualidade e preço justo.”</p>
+          <footer>Fernando, no Google</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="onde" id="onde" aria-labelledby="titulo-onde">
+    <div class="col grade-onde">
+      <div>
+        <h2 id="titulo-onde">Retire na portaria</h2>
+        <p>Rua Cleto da Silva, 1610, Boqueirão, Curitiba.</p>
+      </div>
+      <a class="btn btn-preto" href="https://www.google.com/maps/search/?api=1&amp;query=Dragon%20G%C3%A1s%20Z%2C%20R.%20Cleto%20da%20Silva%2C%201610%2C%20Curitiba" target="_blank" rel="noopener">Ver no Google Maps</a>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="col">
+    <p><strong>Dragon Gás Z</strong>Pazittos Ltda, CNPJ 31.620.208/0001-37</p>
+    <p><strong>Endereço</strong>R. Cleto da Silva, 1610, Boqueirão, Curitiba, CEP 81670-450</p>
+    <p><strong>Pedidos</strong>Disk <a href="tel:+554132764949">(41) 3276-4949</a> e WhatsApp <a href="https://wa.me/5541992897697" target="_blank" rel="noopener">(41) 99289-7697</a></p>
+  </div>
+</footer>
+
+<div class="barra" id="barra" role="region" aria-label="Seu pedido">
+  <p id="barra-texto" aria-live="polite"></p>
+  <button type="button" class="btn btn-muro" id="continuar">Continuar pedido</button>
+</div>
+
+<script>
+(() => {
+  // Tudo o que a loja precisa confirmar mora aqui.
+  // preco: null mostra "no WhatsApp". horario: null mostra "Horário a confirmar".
+  // Formato do horário quando a loja passar: { 1: ["08:00","19:00"], ... } (0 = domingo).
+  const LOJA = {
+    whatsapp: "5541992897697",
+    horario: null,
+    produtos: [
+      { id: "p13",    nome: "Gás P13",   detalhe: "Botijão de 13 kg, o de cozinha", troca: "botijão",  preco: null },
+      { id: "p45",    nome: "Gás P45",   detalhe: "Cilindro de 45 kg",             troca: "cilindro", preco: null },
+      { id: "agua",   nome: "Água 20 L", detalhe: "Galão de água mineral",         troca: "galão",    preco: null },
+      { id: "gelo",   nome: "Gelo",      detalhe: "Saco",                           troca: null,       preco: null },
+      { id: "carvao", nome: "Carvão",    detalhe: "Saco",                           troca: null,       preco: null }
+    ]
+  };
+  const CHAVE = "dragon-gas-z:pedido:v1";
+  const $ = (id) => document.getElementById(id);
+  const qtd = {}, trocar = {};
+  const reais = (v) => "R$ " + v.toFixed(2).replace(".", ",");
+
+  // Aberto ou fechado, só quando houver horário confirmado
+  (function estado() {
+    const el = $("estado"); const h = LOJA.horario;
+    if (!h) return;
+    const agora = new Date(); const hoje = h[agora.getDay()];
+    const min = agora.getHours() * 60 + agora.getMinutes();
+    const m = (t) => { const [a, b] = t.split(":").map(Number); return a * 60 + b; };
+    if (hoje && min >= m(hoje[0]) && min < m(hoje[1])) { el.textContent = `Aberto agora, até ${hoje[1].replace(":00", "h")}`; el.classList.add("aberto"); }
+    else el.textContent = "Fechado agora";
+  })();
+
+  const lista = $("itens");
+  LOJA.produtos.forEach((p) => {
+    qtd[p.id] = 0; trocar[p.id] = true;
+    const el = document.createElement("div");
+    el.className = "produto"; el.dataset.id = p.id;
+    el.innerHTML =
+      `<div class="prod-info"><span class="prod-nome" id="n-${p.id}">${p.nome}</span><span class="prod-det">${p.detalhe}</span>` +
+      `<span class="prod-preco">${p.preco ? `<b>${reais(p.preco)}</b>` : "Preço no Zap"}</span></div>` +
+      `<div class="passo" role="group" aria-labelledby="n-${p.id}">` +
+        `<button type="button" data-d="-1" aria-label="Tirar um ${p.nome}" disabled>−</button>` +
+        `<output aria-live="polite" aria-label="Quantidade de ${p.nome}">0</output>` +
+        `<button type="button" data-d="1" aria-label="Pôr mais um ${p.nome}">+</button>` +
+      `</div>` +
+      (p.troca ? `<label class="marcar troca"><input type="checkbox" checked data-troca="${p.id}"><span>Tenho o ${p.troca} vazio para trocar</span></label>` : "");
+    lista.appendChild(el);
+  });
+
+  function pintarItem(id) {
+    const el = lista.querySelector(`[data-id="${id}"]`);
+    el.querySelector("output").textContent = qtd[id];
+    el.querySelector('[data-d="-1"]').disabled = qtd[id] === 0;
+    el.classList.toggle("tem", qtd[id] > 0);
+    const t = el.querySelector("[data-troca]");
+    if (t) t.checked = trocar[id];
+  }
+
+  lista.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-d]"); if (!b) return;
+    const id = b.closest(".produto").dataset.id;
+    qtd[id] = Math.max(0, Math.min(20, qtd[id] + Number(b.dataset.d)));
+    pintarItem(id); atualizar();
+  });
+  lista.addEventListener("change", (e) => {
+    const t = e.target.closest("[data-troca]"); if (!t) return;
+    trocar[t.dataset.troca] = t.checked; atualizar();
+  });
+
+  const modo = () => document.querySelector('input[name="modo"]:checked')?.value || "entrega";
+  const pagamento = () => document.querySelector('input[name="pagamento"]:checked')?.value || "";
+
+  function dados() {
+    return {
+      qtd: { ...qtd }, trocar: { ...trocar },
+      outros: $("outros").value.trim(),
+      modo: modo(),
+      rua: $("rua").value.trim(), bairro: $("bairro").value.trim(), ref: $("ref").value.trim(),
+      pagamento: pagamento(), troco: $("troco").value.trim(),
+      nome: $("nome").value.trim(), origem: $("origem").value
+    };
+  }
+
+  function linhasItens(d) {
+    const out = [];
+    LOJA.produtos.forEach((p) => {
+      const n = d.qtd[p.id]; if (!n) return;
+      let l = `${n}x ${p.nome}`;
+      if (p.troca) l += d.trocar[p.id] ? ` (tenho o ${p.troca} vazio para trocar)` : ` (sem ${p.troca} para trocar, preciso do completo)`;
+      out.push(l);
+    });
+    if (d.outros) out.push(`Outros: ${d.outros}`);
+    return out;
+  }
+
+  function mensagem(d) {
+    const itens = linhasItens(d);
+    if (!itens.length) return null;
+    const m = ["Olá, Dragon Gás Z! Quero fazer um pedido.", "", "*Pedido*", ...itens, ""];
+    if (d.modo === "retirada") {
+      m.push("*Retirada*", "Vou retirar na portaria.", "");
+    } else {
+      m.push("*Entrega*");
+      m.push([d.rua || "(falta o endereço)", d.bairro].filter(Boolean).join(", "));
+      if (d.ref) m.push(`Referência: ${d.ref}`);
+      m.push("");
+    }
+    m.push("*Pagamento*");
+    if (!d.pagamento) m.push("(falta escolher)");
+    else if (d.pagamento === "Dinheiro") m.push(d.troco ? `Dinheiro, troco para R$ ${d.troco.replace(/^R\$\s*/i, "")}` : "Dinheiro, sem troco");
+    else if (d.pagamento === "Cartão") m.push(d.modo === "retirada" ? "Cartão" : "Cartão na entrega");
+    else m.push("Pix");
+    m.push("");
+    m.push(`Nome: ${d.nome || "(falta o nome)"}`);
+    if (d.origem) m.push(`Conheci vocês por: ${d.origem}`);
+    return m.join("\n");
+  }
+
+  function pintarMsg(texto) {
+    const box = $("msg"); box.textContent = "";
+    if (!texto) {
+      const s = document.createElement("span"); s.className = "vazio";
+      s.textContent = "Escolha um produto e a mensagem aparece aqui.";
+      box.appendChild(s); return;
+    }
+    texto.split("\n").forEach((linha, i, arr) => {
+      const negrito = /^\*(.+)\*$/.exec(linha);
+      const n = negrito ? document.createElement("strong") : document.createTextNode(linha);
+      if (negrito) n.textContent = negrito[1];
+      box.appendChild(n);
+      if (i < arr.length - 1) box.appendChild(document.createTextNode("\n"));
+    });
+  }
+
+  function atualizar() {
+    const d = dados();
+    const entrega = d.modo === "entrega";
+    $("bloco-entrega").hidden = !entrega;
+    $("bloco-retirada").hidden = entrega;
+    $("rotulo-cartao").textContent = entrega ? "Cartão na entrega" : "Cartão";
+    $("bloco-troco").hidden = d.pagamento !== "Dinheiro";
+    const t = mensagem(d);
+    pintarMsg(t);
+    $("enviar").href = t ? `https://wa.me/${LOJA.whatsapp}?text=${encodeURIComponent(t)}` : `https://wa.me/${LOJA.whatsapp}`;
+    if (!$("erros").hidden) validar(d);
+    pintarBarra(d);
+  }
+
+  // Barra do pedido no celular: mostra o que foi escolhido e leva ao que falta
+  let resumoNaTela = false;
+  function pintarBarra(d) {
+    const itens = LOJA.produtos.filter((p) => d.qtd[p.id]).map((p) => `${d.qtd[p.id]} ${p.nome}`);
+    if (d.outros) itens.push("outros itens");
+    $("barra-texto").textContent = itens.join(", ");
+    $("barra").classList.toggle("ativa", itens.length > 0 && !resumoNaTela);
+  }
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { resumoNaTela = e.isIntersecting; pintarBarra(dados()); }).observe($("resumo"));
+  }
+  $("continuar").addEventListener("click", () => {
+    const d = dados();
+    let alvo = $("enviar");
+    if (d.modo === "entrega" && !d.rua) alvo = $("rua");
+    else if (!d.pagamento) alvo = document.querySelector('input[name="pagamento"]');
+    else if (!d.nome) alvo = $("nome");
+    alvo.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+    alvo.focus({ preventScroll: true });
+  });
+
+  function validar(d) {
+    const faltas = [];
+    const marcar = (id, ruim) => $(id).setAttribute("aria-invalid", ruim ? "true" : "false");
+    if (!linhasItens(d).length) faltas.push("Escolha pelo menos um item.");
+    const semRua = d.modo === "entrega" && !d.rua;
+    marcar("rua", semRua); if (semRua) faltas.push("Escreva a rua e o número.");
+    if (!d.pagamento) faltas.push("Escolha como vai pagar.");
+    marcar("nome", !d.nome); if (!d.nome) faltas.push("Escreva seu nome.");
+    const box = $("erros");
+    if (!faltas.length) { box.hidden = true; box.textContent = ""; return true; }
+    box.hidden = false;
+    box.innerHTML = "Falta pouco para enviar:<ul>" + faltas.map((f) => `<li>${f}</li>`).join("") + "</ul>";
+    return false;
+  }
+
+  // Memória neste celular: conveniência, nunca obrigatória
+  function ler() { try { return JSON.parse(localStorage.getItem(CHAVE) || "null"); } catch { return null; } }
+  function gravar(d) { try { localStorage.setItem(CHAVE, JSON.stringify(d)); } catch {} }
+  function apagar() { try { localStorage.removeItem(CHAVE); } catch {} }
+
+  function preencher(d) {
+    LOJA.produtos.forEach((p) => {
+      qtd[p.id] = d.qtd?.[p.id] || 0;
+      trocar[p.id] = d.trocar?.[p.id] !== false;
+      pintarItem(p.id);
+    });
+    $("outros").value = d.outros || "";
+    document.querySelector(`input[name="modo"][value="${d.modo === "retirada" ? "retirada" : "entrega"}"]`).checked = true;
+    $("rua").value = d.rua || ""; $("bairro").value = d.bairro || ""; $("ref").value = d.ref || "";
+    document.querySelectorAll('input[name="pagamento"]').forEach((r) => { r.checked = r.value === d.pagamento; });
+    $("troco").value = d.troco || "";
+    $("nome").value = d.nome || ""; $("origem").value = d.origem || "";
+    atualizar();
+  }
+
+  function mostrarDeNovo() {
+    const s = ler();
+    if (!s || !linhasItens(s).length) { $("denovo").hidden = true; return; }
+    const itens = LOJA.produtos.filter((p) => s.qtd?.[p.id]).map((p) => `${s.qtd[p.id]}x ${p.nome}`);
+    if (s.outros) itens.push("outros itens");
+    const onde = s.modo === "retirada" ? "retirada na portaria" : (s.rua || "");
+    $("denovo-texto").textContent = itens.join(", ") + (onde ? `, ${onde}` : "");
+    $("denovo").hidden = false;
+  }
+
+  $("repetir").addEventListener("click", () => {
+    const s = ler(); if (!s) return;
+    preencher(s);
+    $("msg").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+  });
+  $("esquecer").addEventListener("click", () => { apagar(); $("denovo").hidden = true; });
+
+  $("form").addEventListener("input", atualizar);
+  $("form").addEventListener("change", atualizar);
+  $("form").addEventListener("submit", (e) => e.preventDefault());
+
+  $("enviar").addEventListener("click", (e) => {
+    const d = dados();
+    if (!validar(d)) { e.preventDefault(); return; }
+    if ($("lembrar").checked) gravar(d); else apagar();
+  });
+
+  atualizar();
+  mostrarDeNovo();
+})();
+</script>
+</body>
+</html>

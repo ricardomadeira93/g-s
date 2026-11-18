@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Esboço B, o muro pintado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Muro de disk-gás: parede laranja chapada, número preto enorme,
+     amarelo e vermelho da placa só em detalhes. */
+  :root {
+    --muro: #F2691B;
+    --amarelo: #FFB703;
+    --vermelho: #D62718;
+    --tinta: #111111;
+    --tinta-2: #4E4A47;
+    --branco: #FFFFFF;
+    --fio: #E2DEDB;
+    --display: "Archivo", sans-serif;
+    --texto: "Schibsted Grotesk", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--texto); font-size: 17px; line-height: 1.55; color: var(--tinta); background: var(--branco); padding-bottom: 88px; }
+  a { color: inherit; }
+  button { font: inherit; }
+  :focus-visible { outline: 3px solid var(--tinta); outline-offset: 2px; }
+  .miolo { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+  .gordo { font-family: var(--display); font-weight: 900; font-stretch: 62%; line-height: 1.3; text-transform: uppercase; letter-spacing: 0; }
+
+  .muro { background: var(--muro); padding: 16px 0 0; overflow: hidden; }
+  .cab { display: flex; align-items: center; justify-content: space-between; min-height: 56px; }
+  .marca { font-family: var(--display); font-weight: 900; font-style: italic; font-size: 24px; text-decoration: none; text-transform: uppercase; }
+  .marca span { color: var(--amarelo); -webkit-text-stroke: 0.07em var(--tinta); paint-order: stroke fill; font-size: 1.3em; }
+  .cab a.zap { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; min-height: 48px; display: inline-flex; align-items: center; }
+
+  .parede { display: grid; gap: 8px; padding: 24px 0 32px; }
+  .parede h1 { font-size: clamp(52px, 15vw, 112px); }
+  .parede .liga { font-size: clamp(30px, 8vw, 64px); }
+  .parede .numero { text-decoration: none; font-size: clamp(64px, 21vw, 168px); display: block; white-space: nowrap; color: var(--branco); -webkit-text-stroke: 0.035em var(--tinta); paint-order: stroke fill; }
+  .parede p { font-size: 20px; max-width: 32ch; margin-top: 8px; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-top: 16px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; background: var(--tinta); color: var(--branco); font-weight: 600; font-size: 18px; text-decoration: none; border-radius: 4px; }
+  .foto { display: block; width: 100%; height: 220px; object-fit: cover; object-position: 70% 60%; border-top: 6px solid var(--tinta); }
+
+  .pedido { padding: 40px 0 56px; }
+  .pedido h2 { font-size: 44px; }
+  .pedido .sub { color: var(--tinta-2); max-width: 46ch; }
+  .itens { list-style: none; margin-top: 20px; display: grid; gap: 10px; }
+  .item { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 14px 14px 14px 18px; border: 2px solid var(--tinta); border-radius: 4px; background: var(--branco); }
+  .item.tem { background: var(--amarelo); }
+  .item.tem span { color: var(--tinta); }
+  .item b { font-family: var(--display); font-weight: 900; font-stretch: 62%; text-transform: uppercase; font-size: 32px; line-height: 1.3; display: block; }
+  .item span { color: var(--tinta-2); font-size: 16px; }
+  .passo { display: inline-grid; grid-template-columns: 48px 40px 48px; height: 52px; }
+  .passo button { border: 2px solid var(--tinta); background: var(--branco); font-size: 24px; cursor: pointer; border-radius: 4px; color: var(--tinta); }
+  .passo button:last-child { background: var(--muro); }
+  .passo output { display: grid; place-items: center; font-weight: 600; font-size: 19px; font-variant-numeric: tabular-nums; }
+
+  .barra { position: fixed; left: 0; right: 0; bottom: 0; background: var(--tinta); color: var(--branco); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transform: translateY(110%); transition: transform 200ms ease-out; }
+  .barra.ativa { transform: none; }
+  .barra p { font-size: 16px; line-height: 1.4; }
+  .barra .btn { background: var(--muro); color: var(--tinta); min-height: 48px; padding: 0 18px; flex: none; }
+
+  .btn:hover { background: #333; }
+  .cab a.zap:hover { text-decoration-thickness: 3px; }
+  .parede .numero:hover { color: var(--amarelo); }
+  .passo button:hover { background: #F3F0EE; }
+  .passo button:last-child:hover { background: #F58A4A; }
+  .barra .btn:hover { background: #F58A4A; }
+
+  @media (min-width: 900px) {
+    .parede { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); column-gap: 48px; align-items: end; padding-bottom: 48px; }
+    .parede > div:last-child { padding-bottom: 12px; }
+    .foto { height: 360px; object-position: 70% 55%; }
+    .itens { grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .barra { transition: none; } }
+</style>
+</head>
+<body>
+<section class="muro" id="topo">
+  <div class="miolo">
+    <header class="cab">
+      <a class="marca" href="#topo">Dragon Gás <span>Z</span></a>
+      <a class="zap" href="https://wa.me/5541992897697">Zap 99289-7697</a>
+    </header>
+    <div class="parede">
+      <div>
+        <h1 class="gordo">Acabou o gás?</h1>
+        <span class="gordo liga">Liga</span>
+        <a class="gordo numero" href="tel:+554132764949">3276-4949</a>
+      </div>
+      <div>
+        <p>Gás, água, gelo, carvão e bebidas. Levamos no Boqueirão ou você retira na portaria da Cleto da Silva, 1610.</p>
+        <div class="acoes">
+          <a class="btn" href="#pedido">Pedir pelo Zap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="foto" src="../referencias/fachada-maps-2019.png" alt="A van branca da Dragon Gás Z parada em frente à loja, com a placa e os telefones">
+</section>
+
+<main class="pedido" id="pedido"><div class="miolo">
+  <h2 class="gordo">O que vai ser hoje?</h2>
+  <p class="sub">Escolha os itens. O pedido vai pronto para o Zap da loja, e o atendente confirma o valor e a hora.</p>
+  <ul class="itens" id="itens"></ul>
+</div></main>
+
+<div class="barra" id="barra" aria-live="polite">
+  <p id="resumo"></p>
+  <a class="btn" id="enviar" href="https://wa.me/5541992897697">Enviar no Zap</a>
+</div>
+
+<script>
+  const itens = [["P13","Gás P13","Botijão de 13 kg, o de cozinha"],["P45","Gás P45","Cilindro de 45 kg"],["Água 20 L","Água 20 L","Galão de água mineral"],["Gelo","Gelo","Saco"],["Carvão","Carvão","Saco"]];
+  const q = {};
+  const ul = document.getElementById("itens");
+  itens.forEach(([id, nome, det]) => {
+    q[id] = 0;
+    const li = document.createElement("li"); li.className = "item";
+    li.innerHTML = `<div><b>${nome}</b><span>${det}</span></div><div class="passo"><button type="button" aria-label="Menos ${nome}">−</button><output aria-label="Quantidade de ${nome}">0</output><button type="button" aria-label="Mais ${nome}">+</button></div>`;
+    const [menos, mais] = li.querySelectorAll("button"); const out = li.querySelector("output");
+    const set = (n) => { q[id] = n; out.value = n; li.classList.toggle("tem", n > 0); atualizar(); };
+    menos.onclick = () => set(Math.max(0, q[id] - 1));
+    mais.onclick = () => set(q[id] + 1);
+    ul.appendChild(li);
+  });
+  function atualizar() {
+    const sel = itens.filter(([id]) => q[id]).map(([id, nome]) => `${q[id]} ${nome}`);
+    document.getElementById("barra").classList.toggle("ativa", sel.length > 0);
+    document.getElementById("resumo").textContent = sel.join(", ");
+    document.getElementById("enviar").href = "https://wa.me/5541992897697?text=" + encodeURIComponent("Olá! Quero pedir: " + sel.join(", "));
+  }
+</script>
+</body>
+</html>

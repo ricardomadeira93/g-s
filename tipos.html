@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dragon Gás Z, tipografia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..100,400..900;1,100,900&family=Schibsted+Grotesk:wght@400;600&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #CFCAC6; padding: 24px; font: 14px/1.5 system-ui, sans-serif; }
+  .quadro { display: grid; grid-template-columns: repeat(3, 360px); gap: 28px 24px; justify-content: center; }
+  .rotulo { font-weight: 600; font-size: 15px; color: #111; }
+  .nota { font-size: 13px; color: #333; margin-bottom: 8px; min-height: 40px; }
+  .tel { width: 360px; background: #fff; color: #111; overflow: hidden; }
+  .muro { background: #F2691B; padding: 12px 16px 24px; }
+  .cab { display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
+  .marca { font-family: "Archivo"; font-weight: 900; font-style: italic; font-size: 20px; text-transform: uppercase; }
+  .marca span { color: #FFB703; -webkit-text-stroke: 0.07em #111; paint-order: stroke fill; font-size: 1.3em; }
+  .cab a { font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  h1 { margin-top: 12px; }
+  .liga { display: block; margin-top: 2px; }
+  .num { display: block; white-space: nowrap; }
+  .muro p { margin-top: 12px; font-size: 18px; line-height: 1.45; }
+  .p { padding: 24px 16px 20px; }
+  .p h2 { line-height: 1.3; }
+  .p .intro { color: #4E4A47; margin-top: 4px; font-size: 16px; line-height: 1.5; }
+  .lista { margin-top: 16px; border-top: 2px solid #111; }
+  .linha { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 10px; border-bottom: 1px solid #E2DEDB; }
+  .linha.tem { background: #FFF1C7; }
+  .nome { display: flex; align-items: center; gap: 8px; line-height: 1.3; }
+  .nome::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #D62718; flex: none; }
+  .det { color: #4E4A47; font-size: 15px; padding-left: 17px; line-height: 1.45; }
+  .passo { display: grid; grid-template-columns: 40px 40px 40px; height: 40px; border: 1.5px solid #6F6964; border-radius: 4px; overflow: hidden; flex: none; }
+  .passo b { display: grid; place-items: center; font-weight: 400; font-size: 20px; }
+  .passo b:last-child { background: #F2691B; }
+  .passo i { display: grid; place-items: center; font-style: normal; font-weight: 600; border-left: 1px solid #E2DEDB; border-right: 1px solid #E2DEDB; }
+  .btn { display: flex; justify-content: center; align-items: center; min-height: 52px; margin-top: 18px; background: #F2691B; border-radius: 4px; font-size: 17px; }
+
+  /* 0. Atual: Archivo condensada em caixa alta + Schibsted */
+  .t0 { font-family: "Schibsted Grotesk"; }
+  .t0 h1, .t0 .liga, .t0 .num, .t0 h2 { font-family: "Archivo"; font-weight: 900; font-stretch: 62%; text-transform: uppercase; line-height: 1.3; }
+  .t0 h1 { font-size: 56px; } .t0 .liga { font-size: 32px; } .t0 .num { font-size: 76px; color: #fff; -webkit-text-stroke: 0.035em #111; paint-order: stroke fill; } .t0 h2 { font-size: 40px; }
+  .t0 .nome { font-weight: 600; font-size: 21px; } .t0 .btn { font-weight: 600; }
+
+  /* 1. Hanken Grotesk, a família do site da Forma, em caixa normal */
+  .t1 { font-family: "Hanken Grotesk"; }
+  .t1 h1 { font-weight: 800; font-size: 46px; line-height: 1.3; letter-spacing: -0.01em; }
+  .t1 .liga { font-weight: 600; font-size: 20px; }
+  .t1 .num { font-weight: 800; font-size: 64px; line-height: 1.3; letter-spacing: -0.01em; font-variant-numeric: lining-nums; }
+  .t1 h2 { font-weight: 800; font-size: 32px; letter-spacing: -0.01em; }
+  .t1 .nome { font-weight: 700; font-size: 20px; } .t1 .btn { font-weight: 700; }
+
+  /* 2. Archivo larga normal, uma família só */
+  .t2 { font-family: "Archivo"; font-stretch: 100%; }
+  .t2 h1 { font-weight: 800; font-size: 42px; line-height: 1.3; }
+  .t2 .liga { font-weight: 600; font-size: 20px; }
+  .t2 .num { font-weight: 800; font-size: 54px; line-height: 1.3; }
+  .t2 h2 { font-weight: 800; font-size: 32px; }
+  .t2 .nome { font-weight: 700; font-size: 20px; } .t2 .btn { font-weight: 700; }
+
+  /* 3. IBM Plex Sans: industrial, de engenharia */
+  .t3 { font-family: "IBM Plex Sans"; }
+  .t3 h1 { font-weight: 700; font-size: 44px; line-height: 1.3; }
+  .t3 .liga { font-weight: 500; font-size: 20px; }
+  .t3 .num { font-weight: 700; font-size: 60px; line-height: 1.3; }
+  .t3 h2 { font-weight: 700; font-size: 30px; }
+  .t3 .nome { font-weight: 600; font-size: 20px; } .t3 .btn { font-weight: 600; }
+
+  /* 4. Big Shoulders (placas de rua de Chicago) nos títulos + Hanken no texto */
+  .t4 { font-family: "Hanken Grotesk"; }
+  .t4 h1, .t4 .liga, .t4 .num, .t4 h2 { font-family: "Big Shoulders Display"; font-weight: 900; line-height: 1.3; }
+  .t4 h1 { font-size: 54px; } .t4 .liga { font-size: 28px; font-weight: 800; } .t4 .num { font-size: 72px; } .t4 h2 { font-size: 40px; }
+  .t4 .nome { font-weight: 700; font-size: 20px; } .t4 .btn { font-weight: 700; }
+
+  /* 5. Bricolage Grotesque nos títulos + Hanken no texto */
+  .t5 { font-family: "Hanken Grotesk"; }
+  .t5 h1, .t5 .num, .t5 h2 { font-family: "Bricolage Grotesque"; font-weight: 800; line-height: 1.3; font-optical-sizing: auto; }
+  .t5 h1 { font-size: 46px; } .t5 .liga { font-weight: 600; font-size: 20px; } .t5 .num { font-size: 62px; } .t5 h2 { font-size: 32px; }
+  .t5 .nome { font-weight: 700; font-size: 20px; } .t5 .btn { font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="quadro" id="quadro"></div>
+<template id="tel">
+  <div class="tel">
+    <div class="muro">
+      <div class="cab"><span class="marca">Dragon Gás <span>Z</span></span><a>Zap 99289-7697</a></div>
+      <h1>Acabou o gás?</h1>
+      <span class="liga">Liga</span>
+      <span class="num">3276-4949</span>
+      <p>Gás, água, gelo, carvão e bebidas. Levamos no Boqueirão e bairros vizinhos.</p>
+    </div>
+    <div class="p">
+      <h2>O que vai ser hoje?</h2>
+      <p class="intro">Escolha os itens. O pedido sai pronto para o Zap da loja.</p>
+      <div class="lista">
+        <div class="linha tem"><div><div class="nome">Gás P13</div><div class="det">Botijão de 13 kg, o de cozinha</div></div><span class="passo"><b>−</b><i>1</i><b>+</b></span></div>
+        <div class="linha"><div><div class="nome">Água 20 L</div><div class="det">Galão de água mineral</div></div><span class="passo"><b>−</b><i>0</i><b>+</b></span></div>
+        <div class="linha"><div><div class="nome">Carvão</div><div class="det">Saco</div></div><span class="passo"><b>−</b><i>0</i><b>+</b></span></div>
+      </div>
+      <a class="btn">Enviar pelo WhatsApp</a>
+    </div>
+  </div>
+</template>
+<script>
+  const opcoes = [
+    ["0. Atual", "Archivo condensada em caixa alta, Schibsted no texto"],
+    ["1. Hanken Grotesk", "A família do site da Forma. Uma só, caixa normal, peso 800 nos títulos"],
+    ["2. Archivo larga", "A mesma Archivo, sem condensar e sem caixa alta. Uma família só"],
+    ["3. IBM Plex Sans", "Grotesca de engenharia, cara de indústria e cilindro"],
+    ["4. Big Shoulders + Hanken", "Desenhada para placas de rua de Chicago. Continua condensada, desenho mais bem feito"],
+    ["5. Bricolage + Hanken", "Grotesca com mais personalidade nos títulos, Hanken no texto"]
+  ];
+  const q = document.getElementById("quadro"), t = document.getElementById("tel");
+  opcoes.forEach(([r, n], i) => {
+    const d = document.createElement("div");
+    d.innerHTML = `<p class="rotulo">${r}</p><p class="nota">${n}</p>`;
+    const c = t.content.cloneNode(true); c.querySelector(".tel").classList.add("t" + i);
+    d.appendChild(c); q.appendChild(d);
+  });
+</script>
+</body>
+</html>
