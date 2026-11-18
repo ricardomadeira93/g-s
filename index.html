@@ -72,7 +72,7 @@
 
     --e-4: 4px; --e-8: 8px; --e-12: 12px; --e-16: 16px; --e-24: 24px;
     --e-32: 32px; --e-48: 48px; --e-72: 72px; --e-96: 96px;
-    --raio: 4px;
+    --raio: 10px;
     --alvo: 48px;
     --borda: 1.5px solid var(--contorno);
   }
@@ -94,7 +94,7 @@
   .intro { color: var(--tinta-2); margin-top: var(--e-8); max-width: 52ch; }
   section[id] { scroll-margin-top: 80px; }
 
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-8); min-height: var(--alvo); padding: 0 var(--e-24); border: 0; border-radius: var(--raio); font-weight: 600; font-size: var(--t-18); text-decoration: none; cursor: pointer; transition: background-color 120ms ease; white-space: nowrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--e-8); min-height: var(--alvo); padding: 0 var(--e-24); border: 0; border-radius: 999px; font-weight: 600; font-size: var(--t-18); text-decoration: none; cursor: pointer; transition: background-color 120ms ease; white-space: nowrap; }
   .btn-preto { background: var(--tinta); color: var(--branco); }
   .btn-preto:hover { background: #333; }
   .btn-muro { background: var(--muro); color: var(--tinta); }
@@ -127,18 +127,29 @@
   }
 
   /* Abertura */
-  .abertura { background: var(--muro); padding: var(--e-32) 0 var(--e-48); }
-  .abertura .col { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--e-32); align-items: center; }
+  .abertura { background: var(--muro); padding: 0 0 var(--e-48); }
+  .abertura .col { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--e-24); align-items: center; }
   .abertura h1 { font-size: var(--t-h1); }
+  .abertura h1 span { display: block; }
   .abertura .sub { font-size: var(--t-20); line-height: 1.5; margin-top: var(--e-16); max-width: 32ch; }
   .abertura .acoes { display: flex; flex-wrap: wrap; gap: var(--e-12); margin-top: var(--e-24); }
   .abertura .acoes .btn { min-height: 52px; }
   .abertura .estado { margin-top: var(--e-16); font-weight: 600; font-size: var(--t-16); }
-  .abertura figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 52% 50%; border-radius: var(--raio); border: 2px solid var(--tinta); }
-  .abertura figcaption { font-size: var(--t-16); margin-top: var(--e-8); }
+  .nota-hero { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0 var(--e-8); margin-top: var(--e-24); min-height: var(--alvo); color: var(--tinta); font-weight: 600; font-size: var(--t-16); text-decoration: none; }
+  .nota-hero .estrelas { font-size: var(--t-18); }
+  .nota-hero:hover span:last-child { text-decoration: underline; text-underline-offset: 3px; }
+  /* No celular a foto da placa abre a página, de ponta a ponta */
+  .abertura figure { order: -1; margin: 0 calc(-1 * var(--e-16)); }
+  .abertura figure img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 52% 45%; }
+  .abertura figcaption { display: none; font-size: var(--t-16); margin-top: var(--e-8); }
+  @media (min-width: 600px) and (max-width: 899px) { .abertura figure img { aspect-ratio: 2 / 1; object-position: 52% 40%; } }
+  @media (min-width: 760px) and (max-width: 899px) { .abertura figure { margin: 0 calc(-1 * var(--e-32)); } }
   @media (min-width: 900px) {
     .abertura { padding: var(--e-72) 0; }
-    .abertura .col { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--e-48); }
+    .abertura .col { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: var(--e-48); }
+    .abertura figure { order: 0; margin: 0; }
+    .abertura figure img { aspect-ratio: 5 / 4; border-radius: 16px; box-shadow: 0 18px 40px -18px rgb(60 20 0 / 0.45); }
+    .abertura figcaption { display: block; }
   }
 
   /* Produtos */
@@ -170,11 +181,11 @@
   .outro .btn { align-self: flex-start; white-space: normal; text-align: left; min-height: 44px; padding: var(--e-8) var(--e-16); font-size: var(--t-16); }
 
   /* Seletor de quantidade: "Adicionar" abre em − n + */
-  .passo { position: relative; display: grid; grid-template-columns: 44px 40px 44px; height: 44px; border: var(--borda); border-radius: var(--raio); overflow: hidden; background: var(--branco); flex: none; }
+  .passo { position: relative; display: grid; grid-template-columns: 44px 40px 44px; height: 44px; border: var(--borda); border-radius: 999px; overflow: hidden; background: var(--branco); flex: none; }
   .passo button { border: 0; background: transparent; color: var(--tinta); font-size: var(--t-20); line-height: 1.3; cursor: pointer; transition: background-color 120ms ease, transform 90ms ease; }
-  .passo button:hover { background: var(--cinza); }
+  .passo button:hover { background: var(--cinza); border-radius: 999px; }
   .passo button:active { transform: scale(0.88); }
-  .passo button:focus-visible { outline: 3px solid var(--tinta); outline-offset: -5px; border-radius: 6px; }
+  .passo button:focus-visible { outline: 3px solid var(--tinta); outline-offset: -5px; border-radius: 999px; }
   .passo button:disabled { color: #B5ADA7; cursor: default; background: transparent; transform: none; }
   .passo output { display: grid; place-items: center; overflow: hidden; font-variant-numeric: tabular-nums; font-weight: 700; }
   .passo output span { display: block; }
@@ -182,7 +193,7 @@
   .passo output .desce { animation: desce 180ms ease-out; }
   @keyframes sobe { from { transform: translateY(70%); opacity: 0; } }
   @keyframes desce { from { transform: translateY(-70%); opacity: 0; } }
-  .passo .add { position: absolute; inset: -1.5px; border-radius: var(--raio); background: var(--muro); font-size: var(--t-16); font-weight: 700; transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 0s, background-color 120ms ease; }
+  .passo .add { position: absolute; inset: -1.5px; border-radius: 999px; background: var(--muro); font-size: var(--t-16); font-weight: 700; transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 0s, background-color 120ms ease; }
   .passo .add:hover { background: var(--muro-claro); }
   .passo .add:active { transform: scale(0.96); }
   .passo:not([data-q="0"]) .add { opacity: 0; transform: scale(1.08); visibility: hidden; pointer-events: none; transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 160ms; }
@@ -343,13 +354,14 @@
   <section class="abertura" id="inicio" aria-labelledby="titulo">
     <div class="col">
       <div>
-        <h1 id="titulo">Acabou o gás? A gente leva.</h1>
+        <h1 id="titulo">Acabou o gás? <span>A gente leva.</span></h1>
         <p class="sub">Gás, água, gelo, carvão e bebidas no Boqueirão. Monte o pedido aqui e ele vai pronto para o WhatsApp da loja, ou retire na portaria.</p>
         <div class="acoes">
           <a class="btn btn-preto" href="#produtos">Ver produtos</a>
           <a class="btn btn-claro" href="tel:+554132764949">Ligar 3276-4949</a>
         </div>
-        <p class="estado" data-estado>Horário a confirmar</p>
+        <p class="estado" data-estado hidden></p>
+        <a class="nota-hero" href="#avaliacoes"><span class="estrelas" aria-hidden="true">★★★★★</span><span>5,0 no Google, 24 avaliações</span></a>
       </div>
       <figure>
         <!-- Provisória: foto do Google Maps (mar/2019). Trocar por fotos da loja antes de publicar. -->
@@ -626,7 +638,7 @@
     const min = agora.getHours() * 60 + agora.getMinutes();
     const m = (t) => { const [a, b] = t.split(":").map(Number); return a * 60 + b; };
     const txt = hoje && min >= m(hoje[0]) && min < m(hoje[1]) ? `Aberto agora, até ${hoje[1].replace(":00", "h")}` : "Fechado agora";
-    document.querySelectorAll("[data-estado]").forEach((el) => { el.textContent = txt; });
+    document.querySelectorAll("[data-estado]").forEach((el) => { el.textContent = txt; el.hidden = false; });
   })();
 
   const passo = (p, idNome) =>
