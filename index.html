@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Dragon Gás Z | Gás, água, gelo e carvão no Boqueirão, Curitiba</title>
+<title>Gás de cozinha no Boqueirão, Curitiba | Dragon Gás Z</title>
 <meta name="description" content="Gás P13 e P45, água 20 L, gelo, carvão e bebidas na Rua Cleto da Silva, 1610, Boqueirão, Curitiba. Peça pelo site, pelo WhatsApp ou retire na portaria.">
 <meta name="theme-color" content="#F2691B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F2691B'/%3E%3Ctext x='16' y='24' font-family='Arial,sans-serif' font-weight='800' font-size='22' text-anchor='middle' fill='%23111111'%3EZ%3C/text%3E%3C/svg%3E">
@@ -79,7 +79,7 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
   body { background: var(--branco); color: var(--tinta); font-family: var(--texto); font-size: var(--t-18); line-height: 1.55; }
   a { color: inherit; }
   img { display: block; max-width: 100%; height: auto; }
@@ -160,17 +160,34 @@
   .prod-pe { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-8) var(--e-12); margin-top: auto; padding-top: var(--e-16); }
   .prod-preco { font-size: var(--t-16); font-weight: 600; }
   .prod-preco b { font-size: var(--t-20); }
+  .prod-spec { margin-top: var(--e-12); border-top: 1px solid var(--fio); font-size: var(--t-16); line-height: 1.4; }
+  .prod-spec div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 var(--e-8); padding: var(--e-8) 0; border-bottom: 1px solid var(--fio); }
+  .prod-spec dt { color: var(--tinta-2); }
+  .prod-spec dd { font-weight: 600; }
+  .prod-zap { display: flex; width: 100%; margin-top: var(--e-12); min-height: 44px; padding: var(--e-8) var(--e-12); font-size: var(--t-16); white-space: normal; text-align: center; line-height: 1.3; }
   .outro { background: var(--cinza); border-color: var(--cinza); padding: var(--e-16); justify-content: space-between; gap: var(--e-16); }
   .outro p { color: var(--tinta-2); font-size: var(--t-16); line-height: 1.5; margin-top: var(--e-4); }
   .outro .btn { align-self: flex-start; white-space: normal; text-align: left; min-height: 44px; padding: var(--e-8) var(--e-16); font-size: var(--t-16); }
 
-  .passo { display: grid; grid-template-columns: 44px 40px 44px; height: 44px; border: var(--borda); border-radius: var(--raio); overflow: hidden; background: var(--branco); flex: none; }
-  .passo button { border: 0; background: var(--branco); font-size: var(--t-20); line-height: 1.3; cursor: pointer; }
+  /* Seletor de quantidade: "Adicionar" abre em − n + */
+  .passo { position: relative; display: grid; grid-template-columns: 44px 40px 44px; height: 44px; border: var(--borda); border-radius: var(--raio); overflow: hidden; background: var(--branco); flex: none; }
+  .passo button { border: 0; background: transparent; color: var(--tinta); font-size: var(--t-20); line-height: 1.3; cursor: pointer; transition: background-color 120ms ease, transform 90ms ease; }
   .passo button:hover { background: var(--cinza); }
-  .passo button[data-d="1"] { background: var(--muro); }
-  .passo button[data-d="1"]:hover { background: var(--muro-claro); }
-  .passo button:disabled { color: #B5ADA7; cursor: default; background: var(--branco); }
-  .passo output { display: grid; place-items: center; font-variant-numeric: tabular-nums; font-weight: 700; border-left: 1px solid var(--fio); border-right: 1px solid var(--fio); }
+  .passo button:active { transform: scale(0.88); }
+  .passo button:focus-visible { outline: 3px solid var(--tinta); outline-offset: -5px; border-radius: 6px; }
+  .passo button:disabled { color: #B5ADA7; cursor: default; background: transparent; transform: none; }
+  .passo output { display: grid; place-items: center; overflow: hidden; font-variant-numeric: tabular-nums; font-weight: 700; }
+  .passo output span { display: block; }
+  .passo output .sobe { animation: sobe 180ms ease-out; }
+  .passo output .desce { animation: desce 180ms ease-out; }
+  @keyframes sobe { from { transform: translateY(70%); opacity: 0; } }
+  @keyframes desce { from { transform: translateY(-70%); opacity: 0; } }
+  .passo .add { position: absolute; inset: -1.5px; border-radius: var(--raio); background: var(--muro); font-size: var(--t-16); font-weight: 700; transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 0s, background-color 120ms ease; }
+  .passo .add:hover { background: var(--muro-claro); }
+  .passo .add:active { transform: scale(0.96); }
+  .passo:not([data-q="0"]) .add { opacity: 0; transform: scale(1.08); visibility: hidden; pointer-events: none; transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 160ms; }
+  .conta.pula { animation: pula 260ms ease-out; }
+  @keyframes pula { 40% { transform: scale(1.35); } }
 
   /* Entrega */
   .entrega { padding: var(--e-72) 0; background: var(--cinza); }
@@ -291,7 +308,12 @@
   .barra p { font-size: var(--t-16); line-height: 1.4; min-width: 0; }
   .barra .btn { flex: none; min-height: 44px; padding: 0 var(--e-16); font-size: var(--t-16); }
   body.tem-itens { padding-bottom: 72px; }
-  @media (min-width: 960px) { .barra { display: none; } body.tem-itens { padding-bottom: 0; } }
+  .zap-flutua { position: fixed; right: var(--e-16); bottom: var(--e-16); z-index: 25; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 2px 6px rgb(0 0 0 / 0.25); transition: bottom 200ms ease-out; }
+  .zap-flutua:hover { background: #1EBE5A; }
+  .zap-flutua svg { width: 30px; height: 30px; }
+  body.tem-itens .zap-flutua { bottom: 88px; }
+  body.pedido-aberto .zap-flutua { display: none; }
+  @media (min-width: 960px) { .barra { display: none; } body.tem-itens { padding-bottom: 0; } body.tem-itens .zap-flutua { bottom: var(--e-16); } }
 </style>
 </head>
 <body>
@@ -408,6 +430,10 @@
           <p>Não. Se tiver o vazio, a loja troca. Se não tiver, leva o botijão completo, e o valor muda. No pedido você marca qual é o seu caso, e o atendente confirma o preço.</p>
         </details>
         <details>
+          <summary>Como ligar o botijão novo?</summary>
+          <p>Feche os botões do fogão. Confira o regulador (a válvula): ele precisa ter o selo do Inmetro e estar dentro da validade gravada nele, e a mangueira também tem validade impressa. Encaixe o regulador no botijão e rosqueie com a mão até o fim, sem ferramenta. Passe espuma de sabão nas conexões: se fizer bolha, tem vazamento, feche o registro e ligue para a loja. Nunca teste com fogo.</p>
+        </details>
+        <details>
           <summary>Quais as formas de pagamento?</summary>
           <p>Pix, dinheiro ou cartão, na entrega ou na portaria. Se for pagar em dinheiro, diga no pedido para quanto precisa de troco.</p>
         </details>
@@ -474,6 +500,10 @@
   <p id="barra-texto" aria-live="polite"></p>
   <button type="button" class="btn btn-muro" data-abrir-pedido>Ver pedido</button>
 </div>
+
+<a class="zap-flutua" id="zap-flutua" href="https://wa.me/5541992897697" target="_blank" rel="noopener" aria-label="Falar com a loja no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path transform="translate(6.6 6.6) scale(0.45)" fill="currentColor" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
 
 <div class="fundo" id="fundo"></div>
 <aside class="painel" id="painel" role="dialog" aria-modal="true" aria-labelledby="titulo-painel">
@@ -576,11 +606,11 @@
     whatsapp: "5541992897697",
     horario: null,
     produtos: [
-      { id: "p13",    nome: "Gás P13",   detalhe: "Botijão de 13 kg, o de cozinha", troca: "botijão",  preco: null, foto: "fotos/p13.jpg",    alt: "Botijões de gás laranja enfileirados, foto ilustrativa" },
-      { id: "p45",    nome: "Gás P45",   detalhe: "Cilindro de 45 kg",             troca: "cilindro", preco: null, foto: "fotos/p45.jpg",    alt: "Cilindros de gás grandes numa gaiola de metal, foto ilustrativa" },
-      { id: "agua",   nome: "Água 20 L", detalhe: "Galão de água mineral",         troca: "galão",    preco: null, foto: "fotos/agua.jpg",   alt: "Galões de água de 20 litros, foto ilustrativa" },
-      { id: "gelo",   nome: "Gelo",      detalhe: "Saco",                           troca: null,       preco: null, foto: "fotos/gelo.jpg",   alt: "Cubos de gelo, foto ilustrativa" },
-      { id: "carvao", nome: "Carvão",    detalhe: "Saco",                           troca: null,       preco: null, foto: "fotos/carvao.jpg", alt: "Carvão em brasa, foto ilustrativa" }
+      { id: "p13",    nome: "Gás P13",   detalhe: "O botijão de cozinha",                  spec: [["Peso", "13 kg"], ["Troca", "Com o vazio"]],  troca: "botijão",  preco: null, foto: "fotos/p13.jpg",    alt: "Botijões de gás laranja enfileirados, foto ilustrativa" },
+      { id: "p45",    nome: "Gás P45",   detalhe: "Para comércio, restaurante e aquecedor", spec: [["Peso", "45 kg"], ["Troca", "Com o vazio"]], troca: "cilindro", preco: null, foto: "fotos/p45.jpg",    alt: "Cilindros de gás grandes numa gaiola de metal, foto ilustrativa" },
+      { id: "agua",   nome: "Água 20 L", detalhe: "Água mineral para bebedouro",            spec: [["Volume", "20 L"], ["Troca", "Com o vazio"]],   troca: "galão",    preco: null, foto: "fotos/agua.jpg",   alt: "Galões de água de 20 litros, foto ilustrativa" },
+      { id: "gelo",   nome: "Gelo",      detalhe: "Saco de gelo",                           spec: [],                                                     troca: null,       preco: null, foto: "fotos/gelo.jpg",   alt: "Cubos de gelo, foto ilustrativa" },
+      { id: "carvao", nome: "Carvão",    detalhe: "Saco de carvão para churrasco",          spec: [],                                                     troca: null,       preco: null, foto: "fotos/carvao.jpg", alt: "Carvão em brasa, foto ilustrativa" }
     ]
   };
   const CHAVE = "dragon-gas-z:pedido:v1";
@@ -600,10 +630,11 @@
   })();
 
   const passo = (p, idNome) =>
-    `<div class="passo" role="group" aria-labelledby="${idNome}">` +
-      `<button type="button" data-d="-1" aria-label="Tirar um ${p.nome}" disabled>−</button>` +
-      `<output aria-live="polite" aria-label="Quantidade de ${p.nome}">0</output>` +
-      `<button type="button" data-d="1" aria-label="Pôr mais um ${p.nome}">+</button>` +
+    `<div class="passo" data-q="0" role="group" aria-labelledby="${idNome}">` +
+      `<button type="button" data-d="-1" tabindex="-1" aria-label="Tirar um ${p.nome}">−</button>` +
+      `<output aria-live="polite" aria-label="Quantidade de ${p.nome}"><span>0</span></output>` +
+      `<button type="button" data-d="1" tabindex="-1" aria-label="Pôr mais um ${p.nome}">+</button>` +
+      `<button type="button" class="add" data-d="1" data-add aria-describedby="${idNome}">Adicionar</button>` +
     `</div>`;
 
   // Cartões do catálogo (antes do cartão de bebidas) e linhas do painel
@@ -615,7 +646,9 @@
     c.innerHTML =
       `<img src="${p.foto}" alt="${p.alt}" width="800" height="600" loading="lazy">` +
       `<div class="prod-corpo"><h3 class="prod-nome" id="n-${p.id}">${p.nome}</h3><p class="prod-det">${p.detalhe}</p>` +
-      `<div class="prod-pe"><span class="prod-preco">${p.preco ? `<b>${reais(p.preco)}</b>` : "Preço no Zap"}</span>${passo(p, "n-" + p.id)}</div></div>`;
+      (p.spec.length ? `<dl class="prod-spec">${p.spec.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>` : "") +
+      `<div class="prod-pe"><span class="prod-preco">${p.preco ? `<b>${reais(p.preco)}</b>` : "Preço no Zap"}</span>${passo(p, "n-" + p.id)}</div>` +
+      `<a class="btn btn-claro prod-zap" href="https://wa.me/${LOJA.whatsapp}?text=${encodeURIComponent(`Oi! Quero pedir 1 ${p.nome}. Meu endereço é: `)}" target="_blank" rel="noopener" aria-describedby="n-${p.id}">Pedir no Zap</a></div>`;
     grade.insertBefore(c, cartaoOutro);
 
     const l = document.createElement("div");
@@ -628,8 +661,17 @@
 
   function pintarItem(id) {
     document.querySelectorAll(`[data-id="${id}"]`).forEach((el) => {
-      el.querySelector("output").textContent = qtd[id];
-      el.querySelector('[data-d="-1"]').disabled = qtd[id] === 0;
+      const pa = el.querySelector(".passo"), out = pa.querySelector("output");
+      const antes = Number(pa.dataset.q);
+      pa.dataset.q = qtd[id];
+      if (antes !== qtd[id]) {
+        const n = document.createElement("span");
+        n.textContent = qtd[id]; n.className = qtd[id] > antes ? "sobe" : "desce";
+        out.replaceChildren(n);
+      }
+      pa.querySelector('.add').tabIndex = qtd[id] === 0 ? 0 : -1;
+      pa.querySelectorAll('[data-d]:not(.add)').forEach((x) => { x.tabIndex = qtd[id] === 0 ? -1 : 0; });
+      pa.querySelector('[data-d="1"]:not(.add)').disabled = qtd[id] >= 20;
       el.classList.toggle("tem", qtd[id] > 0);
       if (el.classList.contains("linha-c")) el.hidden = qtd[id] === 0;
       const t = el.querySelector("[data-troca]");
@@ -642,6 +684,11 @@
     const id = b.closest("[data-id]").dataset.id;
     qtd[id] = Math.max(0, Math.min(20, qtd[id] + Number(b.dataset.d)));
     pintarItem(id); atualizar();
+    // O foco não se perde quando o botão clicado some
+    const pa = b.closest(".passo");
+    if (b.matches("[data-add]")) pa.querySelector('[data-d="1"]:not(.add)').focus();
+    else if (qtd[id] === 0 && !b.closest("[hidden]")) pa.querySelector(".add").focus();
+    else if (b.disabled) pa.querySelector('[data-d="-1"]').focus();
   });
   document.addEventListener("change", (e) => {
     const t = e.target.closest("[data-troca]"); if (!t) return;
@@ -650,7 +697,7 @@
 
   // Painel do pedido
   let quemAbriu = null;
-  const fora = ["topo-site", "conteudo", "rodape", "barra"];
+  const fora = ["topo-site", "conteudo", "rodape", "barra", "zap-flutua"];
   function abrir(foco) {
     quemAbriu = document.activeElement;
     document.body.classList.add("pedido-aberto");
@@ -737,7 +784,11 @@
 
   function pintarContagem(d) {
     const total = LOJA.produtos.reduce((s, p) => s + d.qtd[p.id], 0);
-    $("conta-cab").textContent = total;
+    const conta = $("conta-cab");
+    if (conta.textContent !== String(total)) {
+      conta.textContent = total;
+      conta.classList.remove("pula"); void conta.offsetWidth; conta.classList.add("pula");
+    }
     const itens = LOJA.produtos.filter((p) => d.qtd[p.id]).map((p) => `${d.qtd[p.id]} ${p.nome}`);
     if (d.outros) itens.push("outros itens");
     $("barra-texto").textContent = itens.join(", ");
